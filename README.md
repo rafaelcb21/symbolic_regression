@@ -1,14 +1,14 @@
 # Symbolic Regression
 
-# 1. Instalação
+# 1. Installation
 
-É necessário a versão do python 3.7 ou superior.
-Precisa instalar a lib `line_profiler` com o comando `pip install line-profiler`
+Python version 3.7 or higher is required.
+You need to install the `line_profiler` library using the command `pip install line-profiler`.
 
-# 2. Uso
+# 2. Usage
 
-Executar o arquivo main.py para gerar a base de dados que será usada para usar a Regressão Simbolica.
-Será criado um arquivo csv para cada algoritmo que esta no arquivo `python algorithm.py`
-O csv criado conterá 1000 iterações sobre cada algoritmo, iniciando a iteração 2.
-O algoritmo `levenshteinDistance` deverá ser usado somente com 300 iterações, por isso é que ele esta comentado
+Run the main.py file to generate the dataset that will be used for Symbolic Regression.
+A CSV file will be created for each algorithm present in the `python algorithm.py` file.
+The created CSV will contain 1000 iterations for each algorithm, starting from iteration 2.
+The `levenshteinDistance` algorithm should only be used with 300 iterations, which is why it is commented out.
 
