@@ -1,16 +1,16 @@
-def study1(n):
+def study1(n): # N^2
     for i in range(n):
         for j in range(i):
             pass
 
-def study2(n):
+def study2(n): # sqrt(2)
     p = 0
     for i in range(n):
         p = p + i
 
 # SORTING
 # https://rosettacode.org/wiki/Sorting_algorithms/Insertion_sort#Python
-def insertion_sort(L):
+def insertion_sort(L): # N and N^2 
     for i in range(1, len(L)):
         j = i-1 
         key = L[i]
@@ -19,7 +19,7 @@ def insertion_sort(L):
            j -= 1
         L[j+1] = key
 
-def insertion_sort_bin(seq):
+def insertion_sort_bin(seq): # N and N^2 
     for i in range(1, len(seq)):
         key = seq[i]
         low, up = 0, i
@@ -32,13 +32,13 @@ def insertion_sort_bin(seq):
         seq[:] = seq[:low] + [key] + seq[low:i] + seq[i + 1:]
 
 # https://rosettacode.org/wiki/Sorting_algorithms/Selection_sort#Python
-def selection_sort(lst):
+def selection_sort(lst): # N^2
     for i, e in enumerate(lst):
         mn = min(range(i,len(lst)), key=lst.__getitem__)
         lst[i], lst[mn] = lst[mn], e
 
 # https://rosettacode.org/wiki/Sorting_algorithms/Shell_sort#Python
-def shell(seq):
+def shell(seq): # N log N ou N^6/5 
     inc = len(seq) // 2
     while inc:
         for i, el in enumerate(seq[inc:], inc):
@@ -49,7 +49,7 @@ def shell(seq):
         inc = 1 if inc == 2 else inc * 5 // 11
 
 # https://rosettacode.org/wiki/Sorting_algorithms/Quicksort#Python
-def quick_sort(sequence):
+def quick_sort(sequence): # N log N 
     lesser = []
     equal = []
     greater = []
@@ -68,7 +68,7 @@ def quick_sort(sequence):
     return lesser + equal + greater
 
 # https://rosettacode.org/wiki/Sorting_algorithms/Heapsort#Python
-def heapsort(lst):
+def heapsort(lst): # N log N 
   ''' Heapsort. Note: this function sorts in-place (it mutates the list). '''
 
   # in pseudo-code, heapify only called once, so inline it here
@@ -94,6 +94,7 @@ def siftdown(lst, start, end):
 
 # SEARCHING
 # https://rosettacode.org/wiki/Binary_search#Python
+# Log N 
 def binary_search(l, value=10001): # o numero 10001 serve para nao encontrar o numero, dessa forma entra no pior caso
     low = 0
     high = len(l)-1
@@ -102,7 +103,7 @@ def binary_search(l, value=10001): # o numero 10001 serve para nao encontrar o n
         if l[mid] > value: high = mid-1
         elif l[mid] < value: low = mid+1
         else: return mid
-
+# Log N 
 def binary_search_recursive(l, value=10001, low = 0, high = -1): # o numero 10001 serve para nao encontrar o numero, dessa forma entra no pior caso
     if not l: return -1
     if(high == -1): high = len(l)-1
@@ -116,7 +117,7 @@ def binary_search_recursive(l, value=10001, low = 0, high = -1): # o numero 1000
 
 # DYNAMIC PROGRAMING
 # https://rosettacode.org/wiki/Levenshtein_distance#Python
-#def levenshteinDistance(str1, str2):
+#def levenshteinDistance(str1, str2): # M*N
 #    m = len(str1)
 #    n = len(str2)
 #    d = [[i] for i in range(1, m + 1)]   # d matrix rows
